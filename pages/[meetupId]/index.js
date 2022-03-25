@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   return {
     // Aca especificamos los paths que deben ser pre-renderizados.
     // Normalmente se obtendra de una database el listado de los paths que deben estar disponibles.
-    fallback: false, // Significa que mi prop paths contiene todos los paths disponibles
+    fallback: 'blocking', // Significa que mi prop paths contiene todos los paths disponibles
     // Si activamos fallback en true, next intenta generar dinamicamente esas rutas on-the-fly
     paths: meetups.map(meetup => ({ params: { meetupId: meetup._id.toString() } })),
   };
